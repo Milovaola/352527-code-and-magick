@@ -8,6 +8,8 @@ var GAP = 50;
 var FONT_GAP = 15;
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
+var TEXT_Y = CLOUD_HEIGHT - CLOUD_Y - FONT_GAP;
+var COLUMN_Y = CLOUD_HEIGHT - CLOUD_Y - GAP + FONT_GAP;
 
 var renderCloud = function (ctx, x, y, color) {
   var offset = 10;
@@ -41,13 +43,9 @@ var getTextX = function (index) {
   return CLOUD_X + GAP + ((GAP + BAR_WIDTH) * index);
 };
 
-var TEXT_Y = CLOUD_HEIGHT - CLOUD_Y - FONT_GAP;
-
 var getColumnX = function (index) {
   return CLOUD_X + GAP + ((GAP + BAR_WIDTH) * index);
 };
-
-var COLUMN_Y = CLOUD_HEIGHT - CLOUD_Y - GAP + FONT_GAP;
 
 window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + 10, CLOUD_Y + 10, 'rgba(0, 0, 0, 0.7)');
